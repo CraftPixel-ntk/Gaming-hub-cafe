@@ -1,1081 +1,1121 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>Gaming Hub | Hisar</title>
 
-  <meta
-    name="description"
-    content="Gaming Hub Cafe Hisar — Premium PS5, Multiplayer & Racing Experience"
-  >
-
-  <title>Gaming Hub — Hisar</title>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #050505;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --pink: #ff0066;
+      --pink2: #ff1493;
+      --dark: #050505;
+      --card: #0b0b0b;
+      --border: rgba(255, 0, 102, .35);
+      --gray: #aaa;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 86px;
+      background: rgba(3,3,3,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      display: flex;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .nav {
+      width: 92%;
+      max-width: 1450px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      line-height: .8;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      display: block;
+      color: var(--pink);
+      font-size: 34px;
+      letter-spacing: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    .nav-links a.active {
+      color: var(--pink);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--pink);
+    }
+
+    .book-btn {
+      padding: 15px 27px;
+      border: 1px solid var(--pink);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .book-btn:hover {
+      background: var(--pink);
+      box-shadow: 0 0 30px rgba(255,0,102,.4);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 900px;
+      padding: 150px 4% 70px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 45%, rgba(255,0,102,.24), transparent 35%),
+        radial-gradient(circle at 30% 80%, rgba(255,0,102,.10), transparent 30%),
+        #050505;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      right: -300px;
+      top: 80px;
+      background: var(--pink);
+      filter: blur(180px);
+      opacity: .13;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1450px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .location {
+      color: #ddd;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      letter-spacing: .5px;
+    }
+
+    .location span {
+      color: var(--pink);
+      font-size: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(65px, 7vw, 120px);
+      line-height: .83;
+      letter-spacing: -7px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--pink);
+    }
+
+    .hero h1 .dot {
+      color: var(--pink);
+    }
+
+    .hero-text {
+      margin-top: 30px;
+      max-width: 480px;
+      color: #aaa;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      padding: 19px 30px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .3s;
+      display: inline-block;
+    }
+
+    .primary-btn {
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 0 35px rgba(255,0,102,.22);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(255,0,102,.4);
+    }
+
+    .secondary-btn {
+      color: white;
+      border: 1px solid var(--pink);
+    }
+
+    .secondary-btn:hover {
+      background: var(--pink);
+    }
+
+    /* HERO MEDIA */
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-media img,
+    .hero-media video {
+      width: 100%;
+      height: 590px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid rgba(255,0,102,.35);
+      box-shadow:
+        0 0 70px rgba(255,0,102,.15),
+        0 30px 100px rgba(0,0,0,.7);
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(5,5,5,.25),
+        transparent 40%,
+        rgba(255,0,102,.08)
+      );
+      pointer-events: none;
+    }
+
+    /* ================= FEATURE CARDS ================= */
+
+    .features {
+      margin-top: -5px;
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: rgba(5,5,5,.92);
+      border: 1px solid rgba(255,0,102,.3);
+      padding: 27px;
+      min-height: 135px;
+      transition: .35s;
+    }
+
+    .feature:hover {
+      transform: translateY(-7px);
+      border-color: var(--pink);
+      box-shadow: 0 15px 50px rgba(255,0,102,.15);
+    }
+
+    .feature-number {
+      color: var(--pink);
+      font-size: 27px;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .feature h3 {
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* ================= TICKER ================= */
+
+    .ticker {
+      margin-top: 45px;
+      border-top: 1px solid var(--pink);
+      border-bottom: 1px solid var(--pink);
+      padding: 18px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-block;
+      animation: ticker 18s linear infinite;
+    }
+
+    .ticker span {
+      font-size: 23px;
+      font-weight: 800;
+      margin: 0 35px;
+      letter-spacing: 1px;
+    }
+
+    .ticker span::before {
+      content: "✦";
+      color: var(--pink);
+      margin-right: 35px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 120px 5%;
+      position: relative;
+    }
+
+    .section-container {
+      max-width: 1350px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--pink);
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 5vw, 75px);
+      line-height: .95;
+      font-weight: 900;
+      letter-spacing: -3px;
+      max-width: 850px;
+    }
+
+    .section-title span {
+      color: var(--pink);
+    }
+
+    /* ================= GAMES ================= */
+
+    #games {
+      background:
+        radial-gradient(circle at 80% 30%, rgba(255,0,102,.12), transparent 30%);
+    }
+
+    .games-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .game-card {
+      min-height: 330px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,0,102,.25);
+      background: #090909;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      transition: .5s;
+      opacity: .75;
+    }
+
+    .game-card:hover img {
+      transform: scale(1.08);
+      opacity: .95;
+    }
+
+    .game-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      background: linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,.95)
+      );
+    }
+
+    .game-overlay h3 {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .game-overlay p {
+      color: #aaa;
+      margin-top: 7px;
+    }
+
+    /* ================= EXPERIENCE ================= */
+
+    .experience {
+      background: #080808;
+    }
+
+    .experience-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .experience-card {
+      min-height: 430px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255,0,102,.25);
+    }
+
+    .experience-card.large {
+      grid-row: span 2;
+    }
+
+    .experience-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .experience-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .experience-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 35px;
+      background: linear-gradient(transparent, rgba(0,0,0,.95));
+    }
+
+    .experience-content h3 {
+      font-size: 30px;
+      margin-bottom: 7px;
+    }
+
+    .experience-content p {
+      color: #bbb;
+    }
+
+    /* ================= VIDEO ================= */
+
+    .video-section {
+      text-align: center;
+      background:
+        radial-gradient(circle, rgba(255,0,102,.15), transparent 45%),
+        #050505;
+    }
+
+    .video-box {
+      margin: 55px auto 0;
+      max-width: 1100px;
+      position: relative;
+      border: 1px solid var(--pink);
+      box-shadow: 0 0 80px rgba(255,0,102,.15);
+    }
+
+    .video-box video {
+      width: 100%;
+      display: block;
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    /* ================= PRICING ================= */
+
+    .pricing-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      padding: 40px 32px;
+      background: #090909;
+      border: 1px solid rgba(255,0,102,.25);
+      transition: .35s;
+    }
+
+    .price-card:hover,
+    .price-card.featured {
+      border-color: var(--pink);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(255,0,102,.12);
+    }
+
+    .price-card.featured {
+      background: linear-gradient(150deg,#12040b,#080808);
+    }
+
+    .price-card h3 {
+      font-size: 22px;
+    }
+
+    .price {
+      font-size: 55px;
+      font-weight: 900;
+      margin: 25px 0;
+    }
+
+    .price small {
+      color: #888;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .price-card ul {
+      list-style: none;
+      color: #aaa;
+      line-height: 2.4;
+      margin-bottom: 30px;
+    }
+
+    .price-card li::before {
+      content: "✓";
+      color: var(--pink);
+      margin-right: 10px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      background: #080808;
+    }
+
+    .contact-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-box {
+      padding: 45px;
+      background: #050505;
+      border: 1px solid rgba(255,0,102,.3);
+    }
+
+    .contact-box h3 {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    .contact-box a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      color: var(--pink);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      padding: 45px 5%;
+      background: #030303;
+      border-top: 1px solid rgba(255,0,102,.3);
+      text-align: center;
+    }
+
+    footer .logo {
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .book-btn {
+        display: none;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero-media {
+        order: -1;
+      }
+
+      .hero-media img,
+      .hero-media video {
+        height: 450px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .games-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        height: 70px;
+      }
+
+      .nav {
+        width: 90%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 110px 6% 50px;
+      }
+
+      .hero h1 {
+        font-size: 62px;
+        letter-spacing: -4px;
+      }
+
+      .hero-media img,
+      .hero-media video {
+        height: 300px;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+
+      .games-grid,
+      .pricing-grid,
+      .experience-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card.large {
+        grid-row: auto;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .ticker span {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- =========================================
-       LOADER
-  ========================================== -->
+  <!-- ================= HEADER ================= -->
 
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <span>GAMING</span>
-      <strong>HUB</strong>
-      <div class="loader-line"></div>
-    </div>
-  </div>
+  <header>
+    <nav class="nav">
 
+      <div class="logo">
+        GAMING
+        <span>HUB</span>
+      </div>
 
-  <!-- =========================================
-       NAVIGATION
-  ========================================== -->
+      <div class="nav-links">
+        <a href="#home" class="active">HOME</a>
+        <a href="#games">GAMES</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#pricing">PRICING</a>
+        <a href="#contact">CONTACT</a>
+      </div>
 
-  <header class="navbar">
-
-    <a href="#home" class="logo">
-      <span>GAMING</span>
-      <strong>HUB</strong>
-    </a>
-
-    <nav class="nav-links">
-
-      <a href="#home">Home</a>
-
-      <a href="#games">Games</a>
-
-      <a href="#experience">Experience</a>
-
-      <a href="#pricing">Pricing</a>
-
-      <a href="#contact">Contact</a>
+      <a href="#contact" class="book-btn">
+        BOOK A SESSION ↗
+      </a>
 
     </nav>
-
-    <a
-      href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20gaming%20session."
-      target="_blank"
-      class="nav-book"
-    >
-      BOOK A SESSION
-      <span>↗</span>
-    </a>
-
   </header>
 
 
-  <main>
+  <!-- ================= HERO ================= -->
 
+  <main id="home">
 
-    <!-- =========================================
-         HERO
-    ========================================== -->
+    <section class="hero">
 
-    <section class="hero" id="home">
+      <div class="hero-container">
 
-      <div class="hero-background"></div>
+        <div class="hero-content">
 
-      <div class="hero-noise"></div>
+          <div class="location">
+            <span>●</span>
+            HISAR · HARYANA · INDIA
+          </div>
 
-      <div class="hero-content">
+          <h1>
+            GAME<br>
+            <span class="outline">SIP</span><br>
+            REPEAT<span class="dot">.</span>
+          </h1>
 
-        <div class="hero-location">
-          <span class="status-dot"></span>
-          HISAR · HARYANA · INDIA
+          <p class="hero-text">
+            Your premium gaming arena for PS5,
+            multiplayer battles, racing,
+            great vibes and unforgettable nights.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="primary-btn">
+              BOOK YOUR STATION ↗
+            </a>
+
+            <a href="#games" class="secondary-btn">
+              EXPLORE GAMES ↓
+            </a>
+          </div>
+
         </div>
 
-        <h1 class="hero-title">
 
-          <span class="hero-line">
-            GAME
-          </span>
+        <div class="hero-media">
 
-          <span class="hero-line hero-line-outline">
-            SIP
-          </span>
+          <!-- Put your main gaming photo here -->
+          <img src="assets/gaming-main.jpg" alt="Gaming Hub">
 
-          <span class="hero-line">
-            REPEAT.
-          </span>
+          <!--
+          OR use video instead:
 
-        </h1>
-
-        <p class="hero-description">
-          Your premium gaming arena for PS5,
-          multiplayer battles, racing,
-          great vibes and unforgettable nights.
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20station."
-            target="_blank"
-            class="btn btn-primary"
-          >
-            BOOK YOUR STATION
-            <span>↗</span>
-          </a>
-
-          <a
-            href="#games"
-            class="btn btn-secondary"
-          >
-            EXPLORE GAMES
-            <span>↓</span>
-          </a>
+          <video autoplay muted loop playsinline>
+            <source src="assets/gaminghub.webm" type="video/webm">
+          </video>
+          -->
 
         </div>
 
       </div>
 
+    </section>
 
-      <!-- HERO MEDIA PLACEHOLDER -->
 
-      <div class="hero-media">
+    <!-- ================= FEATURES ================= -->
 
-        <!--
-          LATER PUT YOUR VIDEO HERE
+    <div class="section-container">
 
-          Example:
+      <div class="features">
+
+        <div class="feature">
+          <div class="feature-number">01</div>
+          <h3>PS5 GAMING</h3>
+          <p>Next-gen gaming like never before.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-number">02</div>
+          <h3>MULTIPLAYER</h3>
+          <p>Bring your squad and dominate together.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-number">03</div>
+          <h3>STEERING WHEEL</h3>
+          <p>Real racing feel with precision control.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= TICKER ================= -->
+
+    <div class="ticker">
+
+      <div class="ticker-track">
+
+        <span>PLAY</span>
+        <span>COMPETE</span>
+        <span>DOMINATE</span>
+        <span>REPEAT</span>
+
+        <span>PLAY</span>
+        <span>COMPETE</span>
+        <span>DOMINATE</span>
+        <span>REPEAT</span>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= GAMES ================= -->
+
+    <section id="games">
+
+      <div class="section-container">
+
+        <div class="section-label">
+          THE GAMING HUB EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+          PLAY THE<br>
+          <span>BIGGEST GAMES.</span>
+        </h2>
+
+
+        <div class="games-grid">
+
+          <div class="game-card">
+            <img src="assets/game-1.jpg" alt="PS5 Gaming">
+
+            <div class="game-overlay">
+              <h3>PS5 GAMING</h3>
+              <p>Next generation gaming experience</p>
+            </div>
+          </div>
+
+
+          <div class="game-card">
+            <img src="assets/game-2.jpg" alt="Multiplayer">
+
+            <div class="game-overlay">
+              <h3>MULTIPLAYER</h3>
+              <p>Squad battles & competitive gaming</p>
+            </div>
+          </div>
+
+
+          <div class="game-card">
+            <img src="assets/game-3.jpg" alt="Racing">
+
+            <div class="game-overlay">
+              <h3>RACING</h3>
+              <p>Steering wheel racing setup</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience" class="experience">
+
+      <div class="section-container">
+
+        <div class="section-label">
+          INSIDE GAMING HUB
+        </div>
+
+        <h2 class="section-title">
+          NOT JUST A GAME.<br>
+          <span>AN EXPERIENCE.</span>
+        </h2>
+
+
+        <div class="experience-grid">
+
+          <!-- FIRST PHOTO -->
+          <div class="experience-card large">
+
+            <img
+              src="assets/photo-1.jpg"
+              alt="Gaming Hub Experience"
+            >
+
+            <div class="experience-content">
+              <h3>THE ARENA</h3>
+              <p>Premium gaming setup built for serious fun.</p>
+            </div>
+
+          </div>
+
+
+          <!-- SECOND PHOTO -->
+          <div class="experience-card">
+
+            <img
+              src="assets/photo-2.jpg"
+              alt="Gaming Hub"
+            >
+
+            <div class="experience-content">
+              <h3>GOOD VIBES</h3>
+              <p>Play with friends. Stay for the vibe.</p>
+            </div>
+
+          </div>
+
+
+          <!-- THIRD PHOTO -->
+          <div class="experience-card">
+
+            <img
+              src="assets/photo-3.jpg"
+              alt="Gaming Station"
+            >
+
+            <div class="experience-content">
+              <h3>LEVEL UP</h3>
+              <p>Your next gaming night starts here.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= VIDEO ================= -->
+
+    <section class="video-section">
+
+      <div class="section-container">
+
+        <div class="section-label">
+          WATCH THE EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+          SEE IT.<br>
+          <span>FEEL IT.</span>
+        </h2>
+
+
+        <div class="video-box">
 
           <video
             autoplay
             muted
             loop
             playsinline
+            controls
           >
-            <source src="assets/your-video.mp4">
-          </video>
-        -->
-
-        <div class="media-placeholder">
-
-          <div class="placeholder-icon">
-            ▶
-          </div>
-
-          <span>
-            YOUR GAMING VIDEO
-          </span>
-
-          <small>
-            Add your video later
-          </small>
-
-        </div>
-
-      </div>
-
-
-      <!-- HERO BOTTOM -->
-
-      <div class="hero-bottom">
-
-        <div>
-          <span class="hero-bottom-number">01</span>
-          <span>PS5 GAMING</span>
-        </div>
-
-        <div>
-          <span class="hero-bottom-number">02</span>
-          <span>MULTIPLAYER</span>
-        </div>
-
-        <div>
-          <span class="hero-bottom-number">03</span>
-          <span>STEERING WHEEL</span>
-        </div>
-
-        <div>
-          <span class="hero-bottom-number">04</span>
-          <span>PREMIUM VIBE</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         MARQUEE
-    ========================================== -->
-
-    <section class="marquee-section">
-
-      <div class="marquee-track">
-
-        <span>PLAY</span>
-        <i>✦</i>
-
-        <span>COMPETE</span>
-        <i>✦</i>
-
-        <span>DOMINATE</span>
-        <i>✦</i>
-
-        <span>REPEAT</span>
-        <i>✦</i>
-
-        <span>PLAY</span>
-        <i>✦</i>
-
-        <span>COMPETE</span>
-        <i>✦</i>
-
-        <span>DOMINATE</span>
-        <i>✦</i>
-
-        <span>REPEAT</span>
-        <i>✦</i>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         INTRO / EXPERIENCE
-    ========================================== -->
-
-    <section
-      class="intro section"
-      id="experience"
-    >
-
-      <div class="section-top">
-
-        <span class="eyebrow">
-          ✦ THE GAMING HUB EXPERIENCE
-        </span>
-
-        <span class="section-number">
-          01 / 05
-        </span>
-
-      </div>
-
-
-      <div class="intro-grid">
-
-        <div class="intro-small">
-
-          <p>
-            Built for gamers.
-            Designed for moments.
-            Made for your squad.
-          </p>
-
-        </div>
-
-
-        <div class="intro-main">
-
-          <h2>
-            A GAMING CAFE
-            <span>BUILT DIFFERENT.</span>
-          </h2>
-
-          <p class="intro-text">
-
-            Gaming Hub is your place to pull up,
-            pick your game and lose track of time.
-
-            From intense PS5 battles to racing
-            sessions with the steering wheel,
-            every visit is built around one thing:
-
-            <strong>
-              having a damn good time.
-            </strong>
-
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- FEATURE CARDS -->
-
-      <div class="feature-grid">
-
-
-        <article class="feature-card">
-
-          <span class="feature-number">
-            01
-          </span>
-
-          <div class="feature-icon">
-            ◉
-          </div>
-
-          <h3>
-            PS5 ARENA
-          </h3>
-
-          <p>
-            Jump into next-gen PS5 gaming
-            with your favourite titles.
-          </p>
-
-          <span class="feature-arrow">
-            ↗
-          </span>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span class="feature-number">
-            02
-          </span>
-
-          <div class="feature-icon">
-            ◎
-          </div>
-
-          <h3>
-            MULTIPLAYER
-          </h3>
-
-          <p>
-            Bring your squad and turn
-            friendly matches into rivalries.
-          </p>
-
-          <span class="feature-arrow">
-            ↗
-          </span>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span class="feature-number">
-            03
-          </span>
-
-          <div class="feature-icon">
-            ◈
-          </div>
-
-          <h3>
-            RACING
-          </h3>
-
-          <p>
-            Feel every turn with our
-            steering-wheel racing setup.
-          </p>
-
-          <span class="feature-arrow">
-            ↗
-          </span>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span class="feature-number">
-            04
-          </span>
-
-          <div class="feature-icon">
-            ✦
-          </div>
-
-          <h3>
-            THE VIBE
-          </h3>
-
-          <p>
-            Neon lights, music, coffee,
-            conversations and gaming.
-          </p>
-
-          <span class="feature-arrow">
-            ↗
-          </span>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         IMAGE COLLAGE
-    ========================================== -->
-
-    <section class="visual-section section">
-
-      <div class="visual-grid">
-
-
-        <div class="visual-card visual-large">
-
-          <div class="image-placeholder">
-
-            <span>
-              YOUR PHOTO 01
-            </span>
-
-            <small>
-              Gaming setup
-            </small>
-
-          </div>
-
-        </div>
-
-
-        <div class="visual-card visual-small">
-
-          <div class="image-placeholder">
-
-            <span>
-              YOUR PHOTO 02
-            </span>
-
-            <small>
-              Your cafe
-            </small>
-
-          </div>
-
-        </div>
-
-
-        <div class="visual-card visual-medium">
-
-          <div class="image-placeholder">
-
-            <span>
-              YOUR PHOTO 03
-            </span>
-
-            <small>
-              Gaming vibe
-            </small>
-
-          </div>
-
-        </div>
-
-
-        <div class="visual-copy">
-
-          <span class="eyebrow">
-            PLAY THE NIGHT
-          </span>
-
-          <h2>
-            YOUR
-            <span>SPACE.</span>
-            YOUR
-            <span>RULES.</span>
-          </h2>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         GAMES
-    ========================================== -->
-
-    <section
-      class="games section"
-      id="games"
-    >
-
-      <div class="section-top">
-
-        <span class="eyebrow">
-          ✦ PICK YOUR BATTLE
-        </span>
-
-        <span class="section-number">
-          02 / 05
-        </span>
-
-      </div>
-
-
-      <div class="section-heading">
-
-        <h2>
-          CHOOSE
-          <span>YOUR GAME.</span>
-        </h2>
-
-        <p>
-          One place.
-          Multiple ways to play.
-        </p>
-
-      </div>
-
-
-      <div class="games-list">
-
-
-        <!-- GAME 01 -->
-
-        <article class="game-row">
-
-          <div class="game-number">
-            01
-          </div>
-
-          <div class="game-info">
-
-            <span>
-              PLAYSTATION 5
-            </span>
-
-            <h3>
-              EA SPORTS FC
-            </h3>
-
-            <p>
-              Bring your best squad.
-              Settle the rivalry.
-            </p>
-
-          </div>
-
-          <div class="game-action">
-            PLAY NOW ↗
-          </div>
-
-        </article>
-
-
-        <!-- GAME 02 -->
-
-        <article class="game-row">
-
-          <div class="game-number">
-            02
-          </div>
-
-          <div class="game-info">
-
-            <span>
-              OPEN WORLD
-            </span>
-
-            <h3>
-              GTA V
-            </h3>
-
-            <p>
-              Explore, race, compete
-              and create chaos.
-            </p>
-
-          </div>
-
-          <div class="game-action">
-            PLAY NOW ↗
-          </div>
-
-        </article>
-
-
-        <!-- GAME 03 -->
-
-        <article class="game-row">
-
-          <div class="game-number">
-            03
-          </div>
-
-          <div class="game-info">
-
-            <span>
-              FIGHTING
-            </span>
-
-            <h3>
-              TEKKEN
-            </h3>
-
-            <p>
-              Pick your fighter.
-              Own the arena.
-            </p>
-
-          </div>
-
-          <div class="game-action">
-            PLAY NOW ↗
-          </div>
-
-        </article>
-
-
-        <!-- GAME 04 -->
-
-        <article class="game-row">
-
-          <div class="game-number">
-            04
-          </div>
-
-          <div class="game-info">
-
-            <span>
-              WRESTLING
-            </span>
-
-            <h3>
-              WWE 2K
-            </h3>
-
-            <p>
-              Enter the ring and
-              make your own main event.
-            </p>
-
-          </div>
-
-          <div class="game-action">
-            PLAY NOW ↗
-          </div>
-
-        </article>
-
-
-        <!-- GAME 05 -->
-
-        <article class="game-row">
-
-          <div class="game-number">
-            05
-          </div>
-
-          <div class="game-info">
-
-            <span>
-              SIMULATION
-            </span>
-
-            <h3>
-              RACING
-            </h3>
-
-            <p>
-              Steering wheel.
-              Full focus. Full speed.
-            </p>
-
-          </div>
-
-          <div class="game-action">
-            PLAY NOW ↗
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         CAFE
-    ========================================== -->
-
-    <section class="cafe section">
-
-      <div class="section-top">
-
-        <span class="eyebrow">
-          ✦ FUEL YOUR SESSION
-        </span>
-
-        <span class="section-number">
-          03 / 05
-        </span>
-
-      </div>
-
-
-      <div class="cafe-heading">
-
-        <h2>
-          PLAY
-          <span>HUNGRY?</span>
-        </h2>
-
-        <p>
-          Gaming hits different with
-          something good on the side.
-        </p>
-
-      </div>
-
-
-      <div class="cafe-grid">
-
-
-        <article class="cafe-card">
-
-          <div class="cafe-image">
-            <span>
-              YOUR FOOD PHOTO
-            </span>
-          </div>
-
-          <div class="cafe-content">
-
-            <span>
-              01
-            </span>
-
-            <h3>
-              SNACKS
-            </h3>
-
-            <p>
-              Quick bites for
-              long gaming sessions.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="cafe-card">
-
-          <div class="cafe-image">
-            <span>
-              YOUR DRINK PHOTO
-            </span>
-          </div>
-
-          <div class="cafe-content">
-
-            <span>
-              02
-            </span>
-
-            <h3>
-              DRINKS
-            </h3>
-
-            <p>
-              Refresh, recharge
-              and get back in the game.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="cafe-card">
-
-          <div class="cafe-image">
-            <span>
-              YOUR CAFE PHOTO
-            </span>
-          </div>
-
-          <div class="cafe-content">
-
-            <span>
-              03
-            </span>
-
-            <h3>
-              GOOD VIBES
-            </h3>
-
-            <p>
-              Sit back, chill out
-              and enjoy the atmosphere.
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         STATS
-    ========================================== -->
-
-    <section class="stats section">
-
-      <div class="section-top">
-
-        <span class="eyebrow">
-          ✦ WHY GAMING HUB
-        </span>
-
-        <span class="section-number">
-          04 / 05
-        </span>
-
-      </div>
-
-
-      <div class="stats-grid">
-
-
-        <div class="stat">
-
-          <strong>
-            PS5
-          </strong>
-
-          <span>
-            NEXT-GEN GAMING
-          </span>
-
-        </div>
-
-
-        <div class="stat">
-
-          <strong>
-            4+
-          </strong>
-
-          <span>
-            GAMING EXPERIENCES
-          </span>
-
-        </div>
-
-
-        <div class="stat">
-
-          <strong>
-            24/7
-          </strong>
-
-          <span>
-            THE VIBE NEVER STOPS
-          </span>
-
-        </div>
-
-
-        <div class="stat">
-
-          <strong>
-            ∞
-          </strong>
-
-          <span>
-            POSSIBILITIES
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="stats-copy">
-
-        <p>
-          We are not just another gaming place.
-        </p>
-
-        <h2>
-          WE CREATE
-          <span>MEMORIES.</span>
-        </h2>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         FINAL CTA
-    ========================================== -->
-
-    <section class="final-cta">
-
-      <div class="cta-glow"></div>
-
-      <div class="cta-content">
-
-        <span class="eyebrow">
-          ✦ GRAB YOUR SQUAD
-        </span>
-
-        <h2>
-          READY TO
-          <span>BATTLE?</span>
-        </h2>
-
-        <p>
-          Pick your game.
-          Bring your squad.
-          We'll handle the rest.
-        </p>
-
-
-        <a
-          href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20gaming%20session."
-          target="_blank"
-          class="cta-button"
-        >
-
-          BOOK YOUR SESSION
-
-          <span>
-            ↗
-          </span>
-
-        </a>
-
-      </div>
-
-
-      <div class="cta-orbit">
-
-        <span>
-          PLAY · COMPETE · REPEAT ·
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         CONTACT
-    ========================================== -->
-
-    <section
-      class="contact section"
-      id="contact"
-    >
-
-      <div class="section-top">
-
-        <span class="eyebrow">
-          ✦ COME FIND US
-        </span>
-
-        <span class="section-number">
-          05 / 05
-        </span>
-
-      </div>
-
-
-      <div class="contact-grid">
-
-
-        <div class="contact-main">
-
-          <h2>
-            LET'S
-            <span>PLAY.</span>
-          </h2>
-
-          <p>
-            Your next gaming session
-            is waiting.
-          </p>
-
-        </div>
-
-
-        <div class="contact-details">
-
-          <div class="contact-item">
-
-            <span>
-              LOCATION
-            </span>
-
-            <p>
-              Rooh Bakers,
-              Sector 13 Parking,
-              Hisar, Haryana 125001
-            </p>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <span>
-              WHATSAPP
-            </span>
-
-            <a
-              href="https://wa.me/919004490098"
-              target="_blank"
+            <source
+              src="assets/gaminghub.webm"
+              type="video/webm"
             >
-              +91 90044 90098
+
+            Your browser does not support video.
+          </video>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PRICING ================= -->
+
+    <section id="pricing">
+
+      <div class="section-container">
+
+        <div class="section-label">
+          CHOOSE YOUR SESSION
+        </div>
+
+        <h2 class="section-title">
+          PLAY MORE.<br>
+          <span>PAY LESS.</span>
+        </h2>
+
+
+        <div class="pricing-grid">
+
+
+          <div class="price-card">
+
+            <h3>SOLO</h3>
+
+            <div class="price">
+              ₹99
+              <small>/ HR</small>
+            </div>
+
+            <ul>
+              <li>PS5 Gaming</li>
+              <li>Premium Station</li>
+              <li>Comfortable Setup</li>
+            </ul>
+
+            <a href="#contact" class="secondary-btn">
+              BOOK NOW
             </a>
 
           </div>
 
 
-          <div class="contact-item">
+          <div class="price-card featured">
 
-            <span>
-              EXPERIENCE
-            </span>
+            <h3>DUO</h3>
 
-            <p>
-              PS5 · Multiplayer · Racing
-            </p>
+            <div class="price">
+              ₹149
+              <small>/ HR</small>
+            </div>
+
+            <ul>
+              <li>2 Player Gaming</li>
+              <li>PS5 Setup</li>
+              <li>Multiplayer Battles</li>
+            </ul>
+
+            <a href="#contact" class="primary-btn">
+              BOOK NOW
+            </a>
 
           </div>
 
 
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Rooh+Bakers+Sector+13+Parking+Hisar+Haryana"
-            target="_blank"
-            class="map-button"
-          >
-            OPEN IN GOOGLE MAPS
-            <span>↗</span>
-          </a>
+          <div class="price-card">
+
+            <h3>RACING</h3>
+
+            <div class="price">
+              ₹199
+              <small>/ HR</small>
+            </div>
+
+            <ul>
+              <li>Steering Wheel</li>
+              <li>Racing Setup</li>
+              <li>Immersive Experience</li>
+            </ul>
+
+            <a href="#contact" class="secondary-btn">
+              BOOK NOW
+            </a>
+
+          </div>
+
 
         </div>
 
@@ -1084,170 +1124,111 @@
     </section>
 
 
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact">
+
+      <div class="section-container">
+
+        <div class="section-label">
+          READY TO PLAY?
+        </div>
+
+        <h2 class="section-title">
+          LET'S<br>
+          <span>GAME.</span>
+        </h2>
+
+
+        <div class="contact-grid">
+
+          <div class="contact-box">
+
+            <h3>VISIT US</h3>
+
+            <p>
+              Rooh Bakers<br>
+              Sec 13 Parking<br>
+              Hisar, Haryana, India
+            </p>
+
+          </div>
+
+
+          <div class="contact-box">
+
+            <h3>BOOK YOUR SESSION</h3>
+
+            <p>
+              Message us on WhatsApp and
+              reserve your gaming station.
+            </p>
+
+            <br>
+
+            <!-- CHANGE NUMBER BELOW -->
+            <a
+              href="https://wa.me/91XXXXXXXXXX"
+              class="primary-btn"
+              target="_blank"
+            >
+              WHATSAPP US ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
 
-  <!-- =========================================
-       FOOTER
-  ========================================== -->
+  <!-- ================= FOOTER ================= -->
 
-  <footer class="footer">
+  <footer>
 
-    <div class="footer-top">
-
-
-      <div class="footer-brand">
-
-        <a href="#home" class="logo footer-logo">
-
-          <span>GAMING</span>
-
-          <strong>HUB</strong>
-
-        </a>
-
-        <p>
-          Play hard.
-          Stay longer.
-          Make memories.
-        </p>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <div>
-
-          <span>
-            EXPLORE
-          </span>
-
-          <a href="#home">
-            Home
-          </a>
-
-          <a href="#games">
-            Games
-          </a>
-
-          <a href="#experience">
-            Experience
-          </a>
-
-          <a href="#contact">
-            Contact
-          </a>
-
-        </div>
-
-
-        <div>
-
-          <span>
-            CONNECT
-          </span>
-
-          <a
-            href="https://wa.me/919004490098"
-            target="_blank"
-          >
-            WhatsApp
-          </a>
-
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Rooh+Bakers+Sector+13+Parking+Hisar+Haryana"
-            target="_blank"
-          >
-            Location
-          </a>
-
-        </div>
-
-      </div>
-
+    <div class="logo">
+      GAMING
+      <span>HUB</span>
     </div>
 
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 GAMING HUB
-      </span>
-
-      <span>
-        HISAR · HARYANA
-      </span>
-
-      <span>
-        PLAY · COMPETE · REPEAT
-      </span>
-
-    </div>
+    <p>
+      © 2026 Gaming Hub Hisar. All rights reserved.
+    </p>
 
   </footer>
 
 
-  <!-- =========================================
-       FLOATING WHATSAPP
-  ========================================== -->
-
-  <a
-    href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20gaming%20session."
-    target="_blank"
-    class="floating-whatsapp"
-    aria-label="Chat on WhatsApp"
-  >
-    <span>WHATSAPP</span>
-    <strong>↗</strong>
-  </a>
-
-
-  <!-- =========================================
-       JAVASCRIPT
-       Temporary basic functionality.
-       Full animations will be added in script.js
-  ========================================== -->
+  <!-- ================= SMALL ANIMATION ================= -->
 
   <script>
 
-    /* -----------------------------------------
-       LOADER
-    ----------------------------------------- */
+    const sections = document.querySelectorAll("section[id]");
+    const links = document.querySelectorAll(".nav-links a");
 
-    window.addEventListener("load", function () {
+    window.addEventListener("scroll", () => {
 
-      const loader = document.getElementById("loader");
+      let current = "";
 
-      setTimeout(function () {
+      sections.forEach(section => {
 
-        loader.classList.add("hidden");
+        const sectionTop = section.offsetTop - 150;
 
-      }, 800);
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
 
-    });
+      });
 
+      links.forEach(link => {
 
-    /* -----------------------------------------
-       SMOOTH ANCHOR SCROLL
-    ----------------------------------------- */
+        link.classList.remove("active");
 
-    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-
-      link.addEventListener("click", function(event) {
-
-        const target = document.querySelector(
-          this.getAttribute("href")
-        );
-
-        if (target) {
-
-          event.preventDefault();
-
-          target.scrollIntoView({
-            behavior: "smooth"
-          });
-
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
         }
 
       });
@@ -1256,6 +1237,5 @@
 
   </script>
 
-<script src="script.js"></script>
 </body>
 </html>
