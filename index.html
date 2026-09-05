@@ -1,328 +1,668 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gaming Hub & Cafe | Hisar</title>
+  <title>GAMING HUB — Hisar</title>
 
-    <link rel="stylesheet" href="style.css">
+  <meta name="description"
+    content="Gaming Hub & Cafe Hisar. Premium PS5 gaming, multiplayer battles and steering wheel racing.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
+  <!-- LOADER -->
 
-        <div class="logo">
-            GAMING<span>HUB</span>
-        </div>
+  <div class="loader">
+    <div class="loader-logo">GAMING<span>HUB</span></div>
+    <div class="loader-line"></div>
+  </div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#games">Games</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#cafe">Cafe</a>
-            <a href="#contact">Contact</a>
-        </nav>
 
-        <a href="#booking" class="nav-button">
-            BOOK NOW
+  <!-- CURSOR -->
+
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <a href="#home" class="logo">
+      GAMING<span>HUB</span>
+    </a>
+
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#games">Games</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a
+      href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20gaming%20session."
+      target="_blank"
+      class="nav-book">
+      BOOK NOW
+    </a>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section id="home" class="hero">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-tag">
+        HISAR / INDIA
+      </div>
+
+      <h1>
+        PLAY<br>
+        <span>BEYOND</span><br>
+        LIMITS.
+      </h1>
+
+      <p>
+        PREMIUM PS5 GAMING EXPERIENCE
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20gaming%20session."
+          target="_blank"
+          class="luxury-button">
+          BOOK YOUR SESSION
+          <span>↗</span>
         </a>
 
-    </header>
-
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <p class="small-title">
-                🎮 PREMIUM PS5 GAMING EXPERIENCE
-            </p>
-
-            <h1>
-                PLAY.<br>
-                COMPETE.<br>
-                <span>EXPERIENCE.</span>
-            </h1>
-
-            <p class="hero-text">
-                Your ultimate gaming destination in Hisar.
-                Play your favourite PS5 games with your friends.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#booking" class="main-button">
-                    BOOK YOUR SESSION →
-                </a>
-
-                <a href="#games" class="second-button">
-                    EXPLORE GAMES
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="hero-overlay"></div>
-
-    </section>
-
-
-    <!-- STATS -->
-    <section class="stats">
-
-        <div>
-            <h2>PS5</h2>
-            <p>Gaming Experience</p>
-        </div>
-
-        <div>
-            <h2>100+</h2>
-            <p>Games</p>
-        </div>
-
-        <div>
-            <h2>4K</h2>
-            <p>Gaming Experience</p>
-        </div>
-
-        <div>
-            <h2>∞</h2>
-            <p>Fun</p>
-        </div>
-
-    </section>
-
-
-    <!-- GAMES -->
-    <section class="games-section" id="games">
-
-        <div class="section-heading">
-
-            <p>DISCOVER YOUR NEXT GAME</p>
-
-            <h2>
-                POPULAR <span>GAMES</span>
-            </h2>
-
-        </div>
-
-
-        <div class="game-grid">
-
-            <div class="game-card">
-                <div class="game-image gta">
-                    GTA V
-                </div>
-
-                <div class="game-info">
-                    <h3>Grand Theft Auto V</h3>
-                    <p>PS5 • Action</p>
-                </div>
-            </div>
-
-
-            <div class="game-card">
-                <div class="game-image fc">
-                    FC
-                </div>
-
-                <div class="game-info">
-                    <h3>EA Sports FC</h3>
-                    <p>PS5 • Sports</p>
-                </div>
-            </div>
-
-
-            <div class="game-card">
-                <div class="game-image wwe">
-                    WWE
-                </div>
-
-                <div class="game-info">
-                    <h3>WWE 2K</h3>
-                    <p>PS5 • Fighting</p>
-                </div>
-            </div>
-
-
-            <div class="game-card">
-                <div class="game-image tekken">
-                    TEKKEN
-                </div>
-
-                <div class="game-info">
-                    <h3>Tekken</h3>
-                    <p>PS5 • Fighting</p>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PRICING -->
-    <section class="pricing" id="pricing">
-
-        <div class="section-heading">
-
-            <p>CHOOSE YOUR EXPERIENCE</p>
-
-            <h2>
-                GAMING <span>PLANS</span>
-            </h2>
-
-        </div>
-
-
-        <div class="pricing-grid">
-
-            <div class="price-card">
-
-                <p>STARTER</p>
-
-                <h3>₹___</h3>
-
-                <span>PER HOUR</span>
-
-                <ul>
-                    <li>✓ PS5 Gaming</li>
-                    <li>✓ Premium Controller</li>
-                    <li>✓ All Available Games</li>
-                </ul>
-
-                <a href="#booking">
-                    BOOK NOW →
-                </a>
-
-            </div>
-
-
-            <div class="price-card featured">
-
-                <p>PRO GAMER</p>
-
-                <h3>₹___</h3>
-
-                <span>3 HOURS</span>
-
-                <ul>
-                    <li>✓ PS5 Gaming</li>
-                    <li>✓ Any Available Game</li>
-                    <li>✓ Multiplayer Gaming</li>
-                </ul>
-
-                <a href="#booking">
-                    BOOK NOW →
-                </a>
-
-            </div>
-
-
-            <div class="price-card">
-
-                <p>GROUP</p>
-
-                <h3>₹___</h3>
-
-                <span>GROUP SESSION</span>
-
-                <ul>
-                    <li>✓ Multiplayer</li>
-                    <li>✓ Multiple Controllers</li>
-                    <li>✓ Gaming With Friends</li>
-                </ul>
-
-                <a href="#booking">
-                    BOOK NOW →
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CAFE -->
-    <section class="cafe" id="cafe">
-
-        <div class="cafe-content">
-
-            <p>NOT JUST GAMING</p>
-
-            <h2>
-                GAME.<br>
-                EAT.<br>
-                <span>REPEAT.</span>
-            </h2>
-
-            <p>
-                Grab your favourite food and drinks
-                while you enjoy your gaming session.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- BOOKING -->
-    <section class="booking" id="booking">
-
-        <p>READY TO PLAY?</p>
-
-        <h2>
-            BOOK YOUR<br>
-            <span>SESSION.</span>
-        </h2>
-
-        <p>
-            Reserve your gaming session with Gaming Hub & Cafe.
-        </p>
-
-        <a href="https://wa.me/91XXXXXXXXXX" class="main-button">
-            BOOK ON WHATSAPP →
+        <a href="#experience" class="scroll-button">
+          SCROLL TO EXPLORE ↓
         </a>
 
-    </section>
+      </div>
+
+    </div>
 
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <h2>FIND THE <span>HUB.</span></h2>
-
-        <p>📍 Hisar, Haryana</p>
-
-        <p>🎮 Gaming Hub & Cafe</p>
-
-        <p>📱 WhatsApp for Booking</p>
-
-    </section>
+    <div class="hero-side-text">
+      PS5 / MULTIPLAYER / RACING
+    </div>
 
 
-    <!-- FOOTER -->
-    <footer>
+    <div class="hero-bottom">
 
-        <h2>GAMING<span>HUB</span></h2>
+      <div>
+        <strong>01</strong>
+        <span>PREMIUM SETUP</span>
+      </div>
+
+      <div>
+        <strong>02</strong>
+        <span>MULTIPLAYER</span>
+      </div>
+
+      <div>
+        <strong>03</strong>
+        <span>STEERING WHEEL</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MARQUEE -->
+
+  <section class="marquee">
+
+    <div class="marquee-track">
+
+      <span>PLAY</span>
+      <b>✦</b>
+      <span>COMPETE</span>
+      <b>✦</b>
+      <span>DOMINATE</span>
+      <b>✦</b>
+      <span>REPEAT</span>
+      <b>✦</b>
+
+      <span>PLAY</span>
+      <b>✦</b>
+      <span>COMPETE</span>
+      <b>✦</b>
+      <span>DOMINATE</span>
+      <b>✦</b>
+      <span>REPEAT</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience" class="experience">
+
+    <div class="section-top">
+
+      <span>01 / EXPERIENCE</span>
+
+      <p>
+        NOT JUST A GAMING CAFE.<br>
+        THIS IS YOUR PLAYGROUND.
+      </p>
+
+    </div>
+
+
+    <div class="experience-title">
+
+      <h2>
+        BUILT<br>
+        FOR <span>GAMERS.</span>
+      </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <article class="feature feature-large">
+
+        <div class="feature-number">01</div>
+
+        <div class="feature-icon">PS5</div>
+
+        <div>
+          <h3>PLAYSTATION 5</h3>
+
+          <p>
+            Experience your favourite games with
+            powerful PS5 performance and immersive gameplay.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="feature">
+
+        <div class="feature-number">02</div>
+
+        <div class="feature-icon">VS</div>
+
+        <div>
+          <h3>MULTIPLAYER</h3>
+
+          <p>
+            Challenge your friends.
+            Create rivalries. Own the leaderboard.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="feature racing">
+
+        <div class="feature-number">03</div>
+
+        <div class="feature-icon">R</div>
+
+        <div>
+          <h3>RACING</h3>
+
+          <p>
+            Step into the driver's seat with
+            our steering wheel gaming experience.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="feature">
+
+        <div class="feature-number">04</div>
+
+        <div class="feature-icon">∞</div>
+
+        <div>
+          <h3>THE VIBE</h3>
+
+          <p>
+            Dark. Premium. Competitive.
+            Made for unforgettable gaming nights.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- CINEMATIC MEDIA -->
+
+  <section class="cinematic">
+
+    <div class="cinematic-heading">
+
+      <span>02 / THE VIBE</span>
+
+      <h2>
+        FEEL<br>
+        THE <span>GAME.</span>
+      </h2>
+
+    </div>
+
+
+    <div class="media-stage">
+
+      <div class="media-placeholder">
+
+        <div class="media-placeholder-content">
+
+          <span>YOUR PHOTO</span>
+
+          <h3>
+            GAMING<br>
+            HUB
+          </h3>
+
+          <p>
+            Replace this area with your Gaming Hub photo.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="media-corner">GAMING HUB / HISAR</div>
+
+    </div>
+
+
+    <div class="video-stage">
+
+      <div class="video-placeholder">
+
+        <div>
+          <span>YOUR 4K VIDEO</span>
+
+          <h3>THE EXPERIENCE</h3>
+
+          <p>
+            Your 4K gaming video will be placed here.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GAMES -->
+
+  <section id="games" class="games">
+
+    <div class="section-top">
+
+      <span>03 / GAME LIBRARY</span>
+
+      <p>
+        PICK YOUR WEAPON.<br>
+        PICK YOUR BATTLE.
+      </p>
+
+    </div>
+
+
+    <h2>
+      YOUR<br>
+      <span>BATTLE.</span>
+    </h2>
+
+
+    <div class="game-list">
+
+      <div class="game-row">
+        <span>01</span>
+        <h3>EA SPORTS FC</h3>
+        <small>FOOTBALL</small>
+      </div>
+
+      <div class="game-row">
+        <span>02</span>
+        <h3>GTA V</h3>
+        <small>OPEN WORLD</small>
+      </div>
+
+      <div class="game-row">
+        <span>03</span>
+        <h3>TEKKEN</h3>
+        <small>FIGHTING</small>
+      </div>
+
+      <div class="game-row">
+        <span>04</span>
+        <h3>WWE 2K</h3>
+        <small>SPORTS</small>
+      </div>
+
+      <div class="game-row">
+        <span>05</span>
+        <h3>RACING</h3>
+        <small>STEERING WHEEL</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section id="pricing" class="pricing">
+
+    <div class="section-top">
+
+      <span>04 / PRICING</span>
+
+      <p>
+        CHOOSE YOUR<br>
+        EXPERIENCE.
+      </p>
+
+    </div>
+
+
+    <h2>
+      LET'S<br>
+      <span>PLAY.</span>
+    </h2>
+
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+
+        <span>01 / SOLO</span>
+
+        <h3>₹___</h3>
+
+        <p>Premium Gaming Session</p>
+
+        <a
+          href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20Solo%20session."
+          target="_blank">
+          BOOK SESSION ↗
+        </a>
+
+      </div>
+
+
+      <div class="price-card featured">
+
+        <div class="popular">MOST POPULAR</div>
+
+        <span>02 / MULTIPLAYER</span>
+
+        <h3>₹___</h3>
+
+        <p>Battle With Your Friends</p>
+
+        <a
+          href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20Multiplayer%20session."
+          target="_blank">
+          BOOK SESSION ↗
+        </a>
+
+      </div>
+
+
+      <div class="price-card">
+
+        <span>03 / RACING</span>
+
+        <h3>₹___</h3>
+
+        <p>Steering Wheel Experience</p>
+
+        <a
+          href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20Racing%20session."
+          target="_blank">
+          BOOK SESSION ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta">
+
+    <div class="cta-glow"></div>
+
+    <span>READY PLAYER?</span>
+
+    <h2>
+      GAME<br>
+      <span>ON.</span>
+    </h2>
+
+    <a
+      href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20gaming%20session."
+      target="_blank"
+      class="luxury-button">
+      BOOK ON WHATSAPP ↗
+    </a>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="contact-left">
+
+      <span>05 / FIND US</span>
+
+      <h2>
+        COME<br>
+        <span>PLAY.</span>
+      </h2>
+
+    </div>
+
+
+    <div class="contact-right">
+
+      <div class="contact-item">
+
+        <small>LOCATION</small>
 
         <p>
-            PLAY. COMPETE. EXPERIENCE.
+          Rooh Bakers,<br>
+          Sec 13 Parking,<br>
+          Hisar, Haryana 125001
         </p>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <small>WHATSAPP</small>
+
+        <a href="https://wa.me/919004490098" target="_blank">
+          +91 90044 90098
+        </a>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <small>EXPERIENCE</small>
 
         <p>
-            © 2026 Gaming Hub & Cafe
+          PS5 Gaming<br>
+          Multiplayer<br>
+          Steering Wheel Racing
         </p>
 
-    </footer>
+      </div>
+
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Rooh+Bakers+Sec+13+Parking+Hisar+Haryana+125001"
+        target="_blank"
+        class="map-link">
+        OPEN GOOGLE MAPS ↗
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-main">
+
+      <div class="footer-logo">
+        GAMING<span>HUB</span>
+      </div>
+
+      <p>
+        PLAY. COMPETE. EXPERIENCE.
+      </p>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>© 2026 GAMING HUB & CAFE</span>
+
+      <span>HISAR / HARYANA</span>
+
+      <span>PS5 / MULTIPLAYER / RACING</span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- WHATSAPP -->
+
+  <a
+    href="https://wa.me/919004490098?text=Hi%20Gaming%20Hub%2C%20I%20want%20to%20book%20a%20gaming%20session."
+    target="_blank"
+    class="whatsapp">
+    <span>WA</span>
+  </a>
+
+
+  <!-- ANIMATION SCRIPT -->
+
+  <script>
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.body.classList.add("loaded");
+      }, 700);
+    });
+
+
+    const cursor = document.querySelector(".cursor");
+    const ring = document.querySelector(".cursor-ring");
+
+    if (window.innerWidth > 900) {
+
+      document.addEventListener("mousemove", (e) => {
+
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+
+        ring.style.left = e.clientX + "px";
+        ring.style.top = e.clientY + "px";
+
+      });
+
+    }
+
+
+    document.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("mouseenter", () => {
+        document.body.classList.add("cursor-hover");
+      });
+
+      link.addEventListener("mouseleave", () => {
+        document.body.classList.remove("cursor-hover");
+      });
+
+    });
+
+
+    const observer = new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.15
+      }
+
+    );
+
+
+    document
+      .querySelectorAll(".feature, .game-row, .price-card, .media-stage, .video-stage")
+      .forEach(el => observer.observe(el));
+
+  </script>
 
 </body>
-
 </html>
+```
