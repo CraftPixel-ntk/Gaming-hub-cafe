@@ -1091,3 +1091,26 @@ footer p {
     font-size: 45px;
   }
 }
+.outline {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--pink);
+    cursor: pointer;
+
+    transition: all .4s cubic-bezier(.2,.8,.2,1);
+
+    text-shadow: none;
+}
+
+.outline:hover {
+    color: #ff0066;
+
+    -webkit-text-stroke: 0;
+
+    transform: translateX(8px);
+
+    text-shadow:
+        0 0 8px rgba(255,0,102,.9),
+        0 0 20px rgba(255,0,102,.7),
+        0 0 45px rgba(255,0,102,.45),
+        0 0 80px rgba(255,0,102,.2);
+}
